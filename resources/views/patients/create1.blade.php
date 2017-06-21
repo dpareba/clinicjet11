@@ -140,7 +140,7 @@ Register new patients in clinic
 								<label class="control-label" for="idproof">Enter Id Proof</label>
 								<div class="input-group">
 									<span class="input-group-addon" style="color: #3c8dbc;background-color:#FFFFFF;"><i class="fa fa-credit-card"></i></span>
-									<input value="{{old('idproof')}}" type="text" class="form-control" id="idproof" name="idproof" placeholder="Please Enter AAdhar Number" style="text-align: center;">
+									<input value="{{old('idproof')}}" type="text" class="form-control" id="idproof" name="idproof" data-parsley-type="number" minlength="12" maxlength="12" placeholder="Please Enter AAdhar Number" style="text-align: center;">
 								</div>
 								<span class="help-block">{{$errors->first('idproof')}}</span>
 							</div>
