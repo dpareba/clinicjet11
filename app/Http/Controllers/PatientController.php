@@ -78,6 +78,7 @@ class PatientController extends Controller
             'patientpin'=>'required|min:6|max:6',
             // 'phoneprimary'=>'required|digits:10|unique:patients,phoneprimary',
             // 'phonealternate'=>'required|digits:10|unique:patients,phonealternate',
+            'idproof' => 'digits:12',
             'phoneprimary'=>'required|digits:10',
             'phonealternate'=>'required|digits:10',
             'email'=>'email'
@@ -93,6 +94,7 @@ class PatientController extends Controller
             // 'phoneprimary.unique'=>'Patient with this phone number is already registered',
             'phonealternate.required'=>'Emergency Phone Number is compulsory',
             'phonealternate.digits'=>'Phone number needs to contain 10 digits',
+            'idproof.digits'=>'Aadhar number needs to contain 12 digits',
             // 'phonealternate.unique'=>'Patient with this phone number is already registered',
             'dob.date'=>'The Date of Birth should be in mm/dd/yyyy format.',
             'dob.before'=>'The Date of Birth cannot be later than the date today.'
@@ -202,7 +204,7 @@ class PatientController extends Controller
         $data = Visit::where('patient_id','=',$patient->id)->where('systolic','!=','')->where('diastolic','!=','')->get();
 
         $chart = Charts::multi('areaspline','highcharts')
-                        ->height(300)
+                        ->height(250)
                         ->colors(['#58355E','#7AE7C7'])
                         ->title('Blood Pressure (mmHg)')
                         ->elementLabel('mmHg')

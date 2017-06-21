@@ -121,11 +121,7 @@ Add Consultation for Patient Visit
 								</div>
 							</div>
 							<!-- /.row -->
-							<div class="row">
-								<div class="col-md-6 col-xs-12">
-									{!! $chart->render() !!}
-								</div>
-							</div>
+							
 							
 							<div class="row">
 								<div class="col-md-6 col-xs-12">
@@ -194,7 +190,7 @@ Add Consultation for Patient Visit
 							<hr>
 
 							<div class="row">
-								<div class="col-md-6 col-xs-12">
+								<div class="col-md-12 col-xs-12">
 									<div class="form-group {{ $errors->has('pathology')?'has-error':''}}">
 										<label class="control-label" for="pathology">Recommended Clinical Follow up</label>
 										<div class="pull-right box-tools">
@@ -210,7 +206,30 @@ Add Consultation for Patient Visit
 									</div>
 								</div>
 
-								<div class="col-md-3 col-xs-12">
+								
+							</div>
+							{{-- .row --}}
+
+							<hr>
+
+							@if ($patient->gender == "FEMALE")
+								<div class="row">
+									<div class="col-md-4 col-xs-12">
+										<div class="form-group {{ $errors->has('menses')?'has-error':''}}">
+										<label class="control-label" for="menses">Menses</label>
+										<select name="menses" id="menses" class="js-example-basic-single form-control">
+											<option value="Regular">Regular</option>
+											<option value="Irregular" >Irregular</option>
+										</select>
+										<span class="help-block">{{$errors->first('menses')}}</span>
+									</div>
+									</div>
+								</div>
+								<hr>
+							@endif
+
+							<div class="row">
+								<div class="col-md-6 col-xs-12 ">
 									<div class="form-group {{ $errors->has('systolic') || $errors->has('diastolic')?'has-error':''}}">
 										<label for="">Blood Pressure (Systolic/Diastolic)</label>
 										<div class="row">
@@ -232,7 +251,12 @@ Add Consultation for Patient Visit
 
 								
 							</div>
-							{{-- .row --}}
+
+							<div class="row">
+								<div class="col-md-6 col-xs-12">
+									{!! $chart->render() !!}
+								</div>
+							</div>
 							<hr>
 
 							{{-- =====================================TESTING================================================= --}}
