@@ -108,96 +108,101 @@ Add Consultation for Patient Visit
 									<div class="form-group {{ $errors->has('examinationfindings')?'has-error':''}}">
 										<label class="control-label" for="examinationfindings">Examination Findings</label>
 										<div class="pull-right box-tools">
-										{{-- <a href="" type="button" id="ccadd" style="color: gray;" data-toggle="modal" da><i class="fa fa-plus"></i></a> --}}
-										<a type="button" id="addef" href="" style="color: gray;" data-toggle="modal" data-target="#efModal">
-											<i class="fa fa-plus"></i></a>
-										</div>
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-pencil-square-o"></i></span>
-											<textarea event.preventDefault(); style="text-transform: uppercase;resize: none;"  name="examinationfindings" id="examinationfindings" class="form-control" cols="30" rows="3" style="resize: none;" placeholder="Examination Findings" required="">{{old('examinationfindings')}}</textarea>
-										</div>
-										<span class="help-block">{{$errors->first('examinationfindings')}}</span>
-									</div>
-								</div>
-							</div>
-							<!-- /.row -->
-							
-							
-							<div class="row">
-								<div class="col-md-6 col-xs-12">
-									<div class="form-group {{ $errors->has('patienthistory')?'has-error':''}}">
-										<label class="control-label" for="patienthistory">History of Presenting Complaints</label>
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-pencil-square-o"></i></span>
-											<textarea  event.preventDefault(); style="text-transform: uppercase;resize: none;" name="patienthistory" id="patienthistory" class="form-control" cols="30" rows="3" style="resize: none;" placeholder="Patient History" required="">{{old('patienthistory')}}</textarea>
-										</div>
-										<span class="help-block">{{$errors->first('patienthistory')}}</span>
-									</div>
-								</div>
-								<div class="col-md-6 col-xs-12">
-									<div class="form-group {{ $errors->has('diagnosis')?'has-error':''}}">
-										<label class="control-label" for="diagnosis">Diagnosis</label>
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-pencil-square-o"></i></span>
-											<textarea event.preventDefault(); style="text-transform: uppercase; resize: none;"  name="diagnosis" id="diagnosis" class="form-control" cols="30" rows="3" placeholder="Diagnosis" required="">{{old('diagnosis')}}</textarea>
-										</div>
-										<span class="help-block">{{$errors->first('diagnosis')}}</span>
-									</div>
-								</div>
-							</div>
-							{{-- .row --}}
-							<div class="row">
-								<div class="col-md-6 col-xs-12">
-									<div class="form-group {{ $errors->has('advise')?'has-error':''}}">
-										<label class="control-label" for="advise">Advise</label>
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-pencil-square-o"></i></span>
-											<textarea event.preventDefault(); style="text-transform: uppercase;resize: none;" name="advise" id="advise" class="form-control" cols="30" rows="3"  placeholder="Advise" required="">{{old('advise')}}</textarea>
-										</div>
-										<span class="help-block">{{$errors->first('advise')}}</span>
-									</div>
-								</div>
-
-								<div class="col-md-2 col-xs-12">
-									<div class="form-group {{ $errors->has('followuptype')?'has-error':''}}">
-										<label class="control-label" for="followuptype">Follow up</label>
-										<select name="followuptype" id="followuptype" class="js-example-basic-single form-control">
-											<option value="SOS">SOS</option>
-											<option value="Days" >Days</option>
-											<option value="Months" >Months</option>
-										</select>
-										<span class="help-block">{{$errors->first('followuptype')}}</span>
-									</div>
-								</div>
-								<div class="col-md-1 col-xs-12">
-									<div class="form-group  {{ $errors->has('numdays')?'has-error':''}}">
-										<label class="control-label" id="numdayslabel" for="numdays"></label>
-										<select name="numdays" id="numdays" class="js-example-basic-single form-control">
-											{{-- appending values between 1 and 31 using jquery --}}
-										</select>
-										<span class="help-block">{{$errors->first('numdays')}}</span>
-									</div>
-								</div>
-								<div class="col-md-3 col-xs-12">
-									<div class="form-group ">
-										<label class="control-label" id="nextvisitlabel" for="nextvisit">Follow up on(dd/mm/yyyy)</label>
-										<input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="nextvisit" id="nextvisit">
-									</div>
-								</div>
-
-							</div>
-							{{-- .row --}}
-							<hr>
-
-							<div class="row">
-								<div class="col-md-12 col-xs-12">
-									<div class="form-group {{ $errors->has('pathology')?'has-error':''}}">
-										<label class="control-label" for="pathology">Recommended Clinical Follow up</label>
-										<div class="pull-right box-tools">
-											<a type="button" id="addpath" class="btn btn btn-sm" style="color: gray;" data-toggle="modal" data-target="#myPathModal">
-												<i class="fa fa-plus"></i></a>
+											<select name="" id="">
+												<option value="" selected="">None</option>
+												<option value="">Diabetes</option>
+												<option value="">Blood Pressure</option>
+											</select>
+											{{-- <a href="" type="button" id="ccadd" style="color: gray;" data-toggle="modal" da><i class="fa fa-plus"></i></a> --}}
+											<a type="button"  href="">
+												<a href="" id="addef" data-toggle="modal" data-target="#efModal" class="btn btn-warning btn-xs" type="button" >Add Template</a></a>
 											</div>
-											<select name="pathology[]" id="pathology" class="js-example-basic-multiple  form-control" multiple="multiple">
+											<div class="input-group">
+												<span class="input-group-addon"><i class="fa fa-pencil-square-o"></i></span>
+												<textarea event.preventDefault(); style="text-transform: uppercase;resize: none;"  name="examinationfindings" id="examinationfindings" class="form-control" cols="30" rows="3" style="resize: none;" placeholder="Examination Findings" required="">{{old('examinationfindings')}}</textarea>
+											</div>
+											<span class="help-block">{{$errors->first('examinationfindings')}}</span>
+										</div>
+									</div>
+								</div>
+								<!-- /.row -->
+
+
+								<div class="row">
+									<div class="col-md-6 col-xs-12">
+										<div class="form-group {{ $errors->has('patienthistory')?'has-error':''}}">
+											<label class="control-label" for="patienthistory">History of Presenting Complaints</label>
+											<div class="input-group">
+												<span class="input-group-addon"><i class="fa fa-pencil-square-o"></i></span>
+												<textarea  event.preventDefault(); style="text-transform: uppercase;resize: none;" name="patienthistory" id="patienthistory" class="form-control" cols="30" rows="3" style="resize: none;" placeholder="Patient History" required="">{{old('patienthistory')}}</textarea>
+											</div>
+											<span class="help-block">{{$errors->first('patienthistory')}}</span>
+										</div>
+									</div>
+									<div class="col-md-6 col-xs-12">
+										<div class="form-group {{ $errors->has('diagnosis')?'has-error':''}}">
+											<label class="control-label" for="diagnosis">Diagnosis</label>
+											<div class="input-group">
+												<span class="input-group-addon"><i class="fa fa-pencil-square-o"></i></span>
+												<textarea event.preventDefault(); style="text-transform: uppercase; resize: none;"  name="diagnosis" id="diagnosis" class="form-control" cols="30" rows="3" placeholder="Diagnosis" required="">{{old('diagnosis')}}</textarea>
+											</div>
+											<span class="help-block">{{$errors->first('diagnosis')}}</span>
+										</div>
+									</div>
+								</div>
+								{{-- .row --}}
+								<div class="row">
+									<div class="col-md-6 col-xs-12">
+										<div class="form-group {{ $errors->has('advise')?'has-error':''}}">
+											<label class="control-label" for="advise">Advise</label>
+											<div class="input-group">
+												<span class="input-group-addon"><i class="fa fa-pencil-square-o"></i></span>
+												<textarea event.preventDefault(); style="text-transform: uppercase;resize: none;" name="advise" id="advise" class="form-control" cols="30" rows="3"  placeholder="Advise" required="">{{old('advise')}}</textarea>
+											</div>
+											<span class="help-block">{{$errors->first('advise')}}</span>
+										</div>
+									</div>
+
+									<div class="col-md-2 col-xs-12">
+										<div class="form-group {{ $errors->has('followuptype')?'has-error':''}}">
+											<label class="control-label" for="followuptype">Follow up</label>
+											<select name="followuptype" id="followuptype" class="js-example-basic-single form-control">
+												<option value="SOS">SOS</option>
+												<option value="Days" >Days</option>
+												<option value="Months" >Months</option>
+											</select>
+											<span class="help-block">{{$errors->first('followuptype')}}</span>
+										</div>
+									</div>
+									<div class="col-md-1 col-xs-12">
+										<div class="form-group  {{ $errors->has('numdays')?'has-error':''}}">
+											<label class="control-label" id="numdayslabel" for="numdays"></label>
+											<select name="numdays" id="numdays" class="js-example-basic-single form-control">
+												{{-- appending values between 1 and 31 using jquery --}}
+											</select>
+											<span class="help-block">{{$errors->first('numdays')}}</span>
+										</div>
+									</div>
+									<div class="col-md-3 col-xs-12">
+										<div class="form-group ">
+											<label class="control-label" id="nextvisitlabel" for="nextvisit">Follow up on(dd/mm/yyyy)</label>
+											<input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask name="nextvisit" id="nextvisit">
+										</div>
+									</div>
+
+								</div>
+								{{-- .row --}}
+								<hr>
+
+								<div class="row">
+									<div class="col-md-12 col-xs-12">
+										<div class="form-group {{ $errors->has('pathology')?'has-error':''}}">
+											<label class="control-label" for="pathology">Recommended Clinical Follow up</label>
+											<div class="pull-right box-tools">
+												<a type="button" id="addpath" class="btn btn btn-sm" style="color: gray;" data-toggle="modal" data-target="#myPathModal">
+													<i class="fa fa-plus"></i></a>
+												</div>
+												<select name="pathology[]" id="pathology" class="js-example-basic-multiple  form-control" multiple="multiple">
 											{{-- @foreach ($pathologies as $pathology)
 											<option value="{{$pathology->id}}">{{$pathology->name}}</option>
 											@endforeach --}}
@@ -213,9 +218,9 @@ Add Consultation for Patient Visit
 							<hr>
 
 							@if ($patient->gender == "FEMALE")
-								<div class="row">
-									<div class="col-md-4 col-xs-12">
-										<div class="form-group {{ $errors->has('menses')?'has-error':''}}">
+							<div class="row">
+								<div class="col-md-4 col-xs-12">
+									<div class="form-group {{ $errors->has('menses')?'has-error':''}}">
 										<label class="control-label" for="menses">Menses</label>
 										<select name="menses" id="menses" class="js-example-basic-single form-control">
 											<option value="Regular">Regular</option>
@@ -223,22 +228,22 @@ Add Consultation for Patient Visit
 										</select>
 										<span class="help-block">{{$errors->first('menses')}}</span>
 									</div>
-									</div>
 								</div>
-								<hr>
+							</div>
+							<hr>
 							@endif
 
 							<div class="row">
 								<div class="col-md-6 col-xs-12 ">
 									<div class="form-group {{ $errors->has('systolic') || $errors->has('diastolic')?'has-error':''}}">
-										<label for="">Blood Pressure (Systolic/Diastolic)</label>
+										<label for="">Blood Pressure (Systolic/Diastolic) in mmHg</label>
 										<div class="row">
 											<div class="col-md-6 ">
-												<input  data-parsley-type="digits" minlength="2" maxlength="3"  name="systolic" id="systolic" class="form-control" placeholder="Systolic"  style="text-align: center;">
+												<input  data-parsley-type="digits" minlength="2" maxlength="3"  name="systolic" id="systolic" class="form-control" placeholder="Systolic (mmHg)"  style="text-align: center;">
 											</div>
 											
 											<div class="col-md-6">
-												<input data-parsley-type="digits" minlength="2" maxlength="3" class="form-control" name="diastolic" id="diastolic" placeholder="Diastolic"  style="text-align: center;">
+												<input data-parsley-type="digits" minlength="2" maxlength="3" class="form-control" name="diastolic" id="diastolic" placeholder="Diastolic (mmHg)"  style="text-align: center;">
 											</div>
 										</div>
 										@if ($errors->has('systolic'))
@@ -248,7 +253,15 @@ Add Consultation for Patient Visit
 										@endif
 									</div>
 								</div>
+								<div class="col-md-6 col-xs-12">
+									<div class="form-group {{ $errors->has('randombs')?'has-error':''}}">
+										<label class="control-label" for="randombs">Random Blood Sugar (mg/dl)</label>
 
+										<input  data-parsley-type="number" value="{{old('randombs')}}"  class="form-control" id="randombs" name="randombs" placeholder="Random Blood Sugar (mg/dl)" minlength="2" maxlength="3" style="text-align: center;" >
+										
+										<span class="help-block">{{$errors->first('randombs')}}</span>
+									</div>
+								</div>
 								
 							</div>
 
@@ -820,112 +833,112 @@ Add Consultation for Patient Visit
 
 						{{-- ccModal --}}
 						<div class="example-modal">
-						<div class="modal modal-primary" id="ccModal">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-											<span aria-hidden="true">&times;</span></button>
-											<h4 class="modal-title">Add Chief Investigation Template</h4>
+							<div class="modal modal-primary" id="ccModal">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span></button>
+												<h4 class="modal-title">Add Chief Investigation Template</h4>
+											</div>
+											<div class="modal-body">
+												<form data-parsley-validate class="formcc" action="#" method=""  enctype="multipart/form-data" >
+													{{csrf_field()}}
+													<div id="templatename-error-label" class="form-group ">
+														<label class="control-label" for="templatename">Chief Complaint Template Name</label>
+														<div class="input-group">
+															<span class="input-group-addon"><i class="fa fa-plus-square"></i></span>
+															<input event.preventDefault(); autofocus="" type="text" name="templatename" style="text-transform: uppercase;" id="templatename" class="form-control">
+														</div>
+														<span id="templatename-error" class="help-block"></span>
+													</div>
+
+													<div id="template-error-label" class="form-group ">
+														<label class="control-label" for="template">Chief Complaint Template</label>
+														<div class="input-group">
+															<span class="input-group-addon"><i class="fa fa-plus-square"></i></span>
+															<textarea event.preventDefault(); class="form-control" style="text-transform: uppercase;" id="template" name="template" id="template" cols="30" rows="5"></textarea>
+
+														</div>
+														<span id="template-error" class="help-block"></span>
+													</div>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+													<button type="submit" id="addcctemplate" class="btn btn-outline">Save changes</button>
+												</div>
+											</form>
 										</div>
-										<div class="modal-body">
-											<form data-parsley-validate class="formcc" action="#" method=""  enctype="multipart/form-data" >
-												{{csrf_field()}}
-												<div id="templatename-error-label" class="form-group ">
-													<label class="control-label" for="templatename">Chief Complaint Template Name</label>
-													<div class="input-group">
-														<span class="input-group-addon"><i class="fa fa-plus-square"></i></span>
-														<input event.preventDefault(); autofocus="" type="text" name="templatename" style="text-transform: uppercase;" id="templatename" class="form-control">
-													</div>
-													<span id="templatename-error" class="help-block"></span>
-												</div>
-												
-												<div id="template-error-label" class="form-group ">
-													<label class="control-label" for="template">Chief Complaint Template</label>
-													<div class="input-group">
-														<span class="input-group-addon"><i class="fa fa-plus-square"></i></span>
-														<textarea event.preventDefault(); class="form-control" style="text-transform: uppercase;" id="template" name="template" id="template" cols="30" rows="5"></textarea>
-														
-													</div>
-													<span id="template-error" class="help-block"></span>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
-												<button type="submit" id="addcctemplate" class="btn btn-outline">Save changes</button>
-											</div>
-										</form>
+										<!-- /.modal-content -->
 									</div>
-									<!-- /.modal-content -->
+									<!-- /.modal-dialog -->
 								</div>
-								<!-- /.modal-dialog -->
+								<!-- /.modal -->
 							</div>
-							<!-- /.modal -->
-						</div>
-						<!-- /.example-modal -->
+							<!-- /.example-modal -->
 
-						<div class="example-modal">
-						<div class="modal modal-primary" id="efModal">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-											<span aria-hidden="true">&times;</span></button>
-											<h4 class="modal-title">Add Examination Findings Template</h4>
+							<div class="example-modal">
+								<div class="modal modal-primary" id="efModal">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span></button>
+													<h4 class="modal-title">Add Examination Findings Template</h4>
+												</div>
+												<div class="modal-body">
+													<form data-parsley-validate class="formef" action="#" method=""  enctype="multipart/form-data" >
+														{{csrf_field()}}
+														<div id="templatenameef-error-label" class="form-group ">
+															<label class="control-label" for="templatenameef">Examination Findings Template Name</label>
+															<div class="input-group">
+																<span class="input-group-addon"><i class="fa fa-plus-square"></i></span>
+																<input event.preventDefault(); autofocus="" type="text" name="templatenameef" style="text-transform: uppercase;" id="templatenameef" class="form-control">
+															</div>
+															<span id="templatenameef-error" class="help-block"></span>
+														</div>
+
+														<div id="templateef-error-label" class="form-group ">
+															<label class="control-label" for="templateef">Examination Findings Template</label>
+															<div class="input-group">
+																<span class="input-group-addon"><i class="fa fa-plus-square"></i></span>
+																<textarea event.preventDefault(); class="form-control" style="text-transform: uppercase;" id="templateef" name="templateef" id="templateef" cols="30" rows="5"></textarea>
+
+															</div>
+															<span id="templateef-error" class="help-block"></span>
+														</div>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+														<button type="submit" id="addeftemplate" class="btn btn-outline">Save changes</button>
+													</div>
+												</form>
+											</div>
+											<!-- /.modal-content -->
 										</div>
-										<div class="modal-body">
-											<form data-parsley-validate class="formef" action="#" method=""  enctype="multipart/form-data" >
-												{{csrf_field()}}
-												<div id="templatenameef-error-label" class="form-group ">
-													<label class="control-label" for="templatenameef">Examination Findings Template Name</label>
-													<div class="input-group">
-														<span class="input-group-addon"><i class="fa fa-plus-square"></i></span>
-														<input event.preventDefault(); autofocus="" type="text" name="templatenameef" style="text-transform: uppercase;" id="templatenameef" class="form-control">
-													</div>
-													<span id="templatenameef-error" class="help-block"></span>
-												</div>
-												
-												<div id="templateef-error-label" class="form-group ">
-													<label class="control-label" for="templateef">Examination Findings Template</label>
-													<div class="input-group">
-														<span class="input-group-addon"><i class="fa fa-plus-square"></i></span>
-														<textarea event.preventDefault(); class="form-control" style="text-transform: uppercase;" id="templateef" name="templateef" id="templateef" cols="30" rows="5"></textarea>
-														
-													</div>
-													<span id="templateef-error" class="help-block"></span>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
-												<button type="submit" id="addeftemplate" class="btn btn-outline">Save changes</button>
-											</div>
-										</form>
+										<!-- /.modal-dialog -->
 									</div>
-									<!-- /.modal-content -->
+									<!-- /.modal -->
 								</div>
-								<!-- /.modal-dialog -->
-							</div>
-							<!-- /.modal -->
-						</div>
-						<!-- /.example-modal -->
+								<!-- /.example-modal -->
 
-						<div class="row">
-							<div class="col-md-4 col-md-offset-4">
-								<a href="{{route('patients.show',$patient->id)}}" class="btn btn-primary btn-block"><< Back</a>
-							</div>
-						</div>
-						@stop
+								<div class="row">
+									<div class="col-md-4 col-md-offset-4">
+										<a href="{{route('patients.show',$patient->id)}}" class="btn btn-primary btn-block"><< Back</a>
+									</div>
+								</div>
+								@stop
 
-						@section('scripts')
-						<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-						{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script> --}}
-						<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-						<script>
-							var prescrip = [];
-							var prescriprowcount = 0;
+								@section('scripts')
+								<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+								{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script> --}}
+								<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+								<script>
+									var prescrip = [];
+									var prescriprowcount = 0;
 
-							$(document).ready(function(){
-								$('#chiefcomplaints').focus();
+									$(document).ready(function(){
+										$('#chiefcomplaints').focus();
 
 								// $(".js-example-basic-multiple").select2({
 								// 	placeholder: "Recommended Clinical follow up"

@@ -204,8 +204,11 @@ class PatientController extends Controller
         $data = Visit::where('patient_id','=',$patient->id)->where('systolic','!=','')->where('diastolic','!=','')->get();
 
         $chart = Charts::multi('areaspline','highcharts')
-                        ->height(250)
-                        ->colors(['#58355E','#7AE7C7'])
+                        ->height(300)
+                        //->colors(['#58355E','#7AE7C7'])
+                        //->colors(['#6E0D25','#FFFFB3'])
+                        //->colors(['#7EB19F','#0C8282'])
+                        ->colors(['#72DDF7','#2F4858'])
                         ->title('Blood Pressure (mmHg)')
                         ->elementLabel('mmHg')
                         ->labels($data->pluck('created_at'))
